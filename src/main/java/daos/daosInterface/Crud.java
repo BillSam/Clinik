@@ -1,9 +1,6 @@
 package daos.daosInterface;
 
 
-
-import pojos.actions.Examination;
-
 import java.util.ArrayList;
 
 /**

@@ -2,16 +2,19 @@ package daos.daosImpl;
 
 import DataMapper.DbUtil;
 import daos.daosInterface.Crud;
+import daos.qualifiers.Clinic;
 import pojos.users.User;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import static daos.qualifiers.Clinic.clinicChoice.UserDao;
+
 /**
  * Created by error on 2/11/18.
  */
-
+@Clinic(UserDao)
 public class UserDao implements Crud{
     private DbUtil myDb = null;
 

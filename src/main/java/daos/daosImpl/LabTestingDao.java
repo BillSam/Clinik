@@ -2,6 +2,7 @@ package daos.daosImpl;
 
 import DataMapper.DbUtil;
 import daos.daosInterface.Crud;
+import daos.qualifiers.Clinic;
 import pojos.actions.Examination;
 import pojos.actions.LabTesting;
 import pojos.users.Patient;
@@ -10,9 +11,12 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import static daos.qualifiers.Clinic.clinicChoice.LabTestingDao;
+
 /**
  * Created by error on 2/21/18.
  */
+@Clinic(LabTestingDao)
 public class LabTestingDao implements Crud {
     private DbUtil myDb = null;
 

@@ -2,6 +2,7 @@ package daos.daosImpl;
 
 import DataMapper.DbUtil;
 import daos.daosInterface.Crud;
+import daos.qualifiers.Clinic;
 import pojos.actions.Examination;
 import pojos.actions.PatientVitals;
 import pojos.users.Patient;
@@ -10,9 +11,12 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import static daos.qualifiers.Clinic.clinicChoice.Vitals;
+
 /**
  * Created by error on 2/27/18.
  */
+@Clinic(Vitals)
 public class VitalsDao implements Crud {
     private DbUtil myDb=null;
 
