@@ -23,7 +23,7 @@ public @interface Clinic {
         LabTestingDao,
         PatientDao,
         UserDao,
-        Vitals
+        PatientVitals
 
     }
 

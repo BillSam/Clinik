@@ -1,22 +1,23 @@
 package logic.beanImp;
 
 import daos.daosImpl.VitalsDao;
+import daos.daosInterface.Crud;
+import daos.qualifiers.Clinic;
 import logic.beanInterface.PatientVitalsBeanIn;
 import pojos.actions.PatientVitals;
 import pojos.users.Patient;
 
 import javax.enterprise.context.RequestScoped;
+import javax.inject.Inject;
 
 /**
  * Created by error on 2/21/18.
  */
 @RequestScoped
 public class PatientVitalsBean implements PatientVitalsBeanIn{
-    private VitalsDao patientVitalsDao = null;
-
-    public PatientVitalsBean() {
-        patientVitalsDao = new VitalsDao();
-    }
+    @Inject
+    @Clinic(Clinic.clinicChoice.PatientVitals)
+    Crud patientVitalsDao;
 
     @Override
     public boolean addPatientVitals(PatientVitals vitals) {
@@ -34,7 +35,7 @@ public class PatientVitalsBean implements PatientVitalsBeanIn{
     @Override
     public PatientVitals getPatientVitals(Patient patient) {
 
-        return patientVitalsDao.read(patient);
+        return (PatientVitals) patientVitalsDao.read(patient);
     }
 
     @Override

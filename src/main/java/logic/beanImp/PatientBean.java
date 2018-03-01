@@ -1,10 +1,13 @@
 package logic.beanImp;
 
 import daos.daosImpl.PatientDao;
+import daos.daosInterface.Crud;
+import daos.qualifiers.Clinic;
 import logic.beanInterface.PatientBeanIn;
 import pojos.users.Patient;
 
 import javax.enterprise.context.RequestScoped;
+import javax.inject.Inject;
 import java.util.ArrayList;
 
 /**
@@ -12,11 +15,9 @@ import java.util.ArrayList;
  */
 @RequestScoped
 public class PatientBean implements PatientBeanIn{
-    private PatientDao patientDao = null;
-
-    public PatientBean() {
-         patientDao = new PatientDao();
-    }
+    @Inject
+    @Clinic(Clinic.clinicChoice.PatientDao)
+    Crud patientDao;
 
     public boolean registerPatient(Patient patient){
         boolean status = false;
@@ -28,7 +29,7 @@ public class PatientBean implements PatientBeanIn{
     public boolean verifyPatient(Patient patient){
         Patient patient1 = new Patient();
 
-       patient1 =  patientDao.read(patient);
+       patient1 = (Patient) patientDao.read(patient);
 
        if (patient1.getRegId().equals(patient.getRegId()))
            return true;
@@ -38,7 +39,7 @@ public class PatientBean implements PatientBeanIn{
     @Override
     public Patient getPatientDetails(Patient patient) {
         Patient patient1 = new Patient();
-        patient1 = patientDao.read(patient);
+        patient1 = (Patient) patientDao.read(patient);
 
         return patient1;
     }

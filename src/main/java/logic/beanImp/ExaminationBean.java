@@ -1,19 +1,21 @@
 package logic.beanImp;
 
 import daos.daosImpl.ExaminationDao;
+import daos.daosInterface.Crud;
+import daos.qualifiers.Clinic;
 import logic.beanInterface.ExaminationIn;
 import pojos.actions.Examination;
 import pojos.users.Patient;
+
+import javax.inject.Inject;
 
 /**
  * Created by error on 2/26/18.
  */
 public class ExaminationBean implements ExaminationIn {
-    private ExaminationDao examinationDao = null;
-
-    public ExaminationBean() {
-        examinationDao = new ExaminationDao();
-    }
+    @Inject
+    @Clinic(Clinic.clinicChoice.ExaminationDao)
+    Crud examinationDao;
 
     @Override
     public boolean createExamination(Examination examination) {
@@ -25,7 +27,7 @@ public class ExaminationBean implements ExaminationIn {
     @Override
     public Examination readExamination(Patient patient) {
 
-        return examinationDao.read(patient);
+        return (Examination) examinationDao.read(patient);
     }
 
     @Override

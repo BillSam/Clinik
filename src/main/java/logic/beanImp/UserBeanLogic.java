@@ -2,11 +2,14 @@ package logic.beanImp;
 
 
 import daos.daosImpl.UserDao;
+import daos.daosInterface.Crud;
+import daos.qualifiers.Clinic;
 import logic.beanInterface.UserBeanIo;
 import pojos.users.Doctor;
 import pojos.users.User;
 
 import javax.enterprise.context.RequestScoped;
+import javax.inject.Inject;
 import java.util.ArrayList;
 
 
@@ -15,11 +18,9 @@ import java.util.ArrayList;
  */
 @RequestScoped
 public class UserBeanLogic implements UserBeanIo {
-    UserDao userDao = null;
-
-    public UserBeanLogic() {
-        userDao = new UserDao();
-    }
+    @Inject
+    @Clinic(Clinic.clinicChoice.UserDao)
+    UserDao userDao;
 
     public boolean registerUser(User user) {
 
@@ -31,7 +32,7 @@ public class UserBeanLogic implements UserBeanIo {
 
     public boolean verifyRegisterUser(User user) {
 
-        User u = userDao.read(user);
+        User u = (User) userDao.read(user);
         if (u.getUserId() != null) {
             if (u.getUserId().equals(user.getUserId()))
                 return false;
@@ -52,7 +53,7 @@ public class UserBeanLogic implements UserBeanIo {
 
     public String getLoggedInUserProffesion(User user){
         String profession = null;
-        User u = userDao.read(user);
+        User u = (User) userDao.read(user);
         if (u.getProfession() != null){
 
             profession =u.getProfession();
