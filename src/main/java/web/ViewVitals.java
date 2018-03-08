@@ -21,6 +21,7 @@ public class ViewVitals extends HttpServlet {
     @Inject
     private PatientVitalsBean logic;
 
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.getRequestDispatcher("viewVitals.jsp").forward(req,resp);

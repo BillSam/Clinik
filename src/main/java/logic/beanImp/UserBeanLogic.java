@@ -19,7 +19,7 @@ import java.util.ArrayList;
 @RequestScoped
 public class UserBeanLogic implements UserBeanIo {
     @Inject
-    @Clinic(Clinic.clinicChoice.UserDao)
+    @Clinic(value = Clinic.clinicChoice.UserDao)
     UserDao userDao;
 
     public boolean registerUser(User user) {

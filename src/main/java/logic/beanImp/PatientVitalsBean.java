@@ -16,7 +16,7 @@ import javax.inject.Inject;
 @RequestScoped
 public class PatientVitalsBean implements PatientVitalsBeanIn{
     @Inject
-    @Clinic(Clinic.clinicChoice.PatientVitals)
+    @Clinic(value = Clinic.clinicChoice.PatientVitals)
     Crud patientVitalsDao;
 
     @Override

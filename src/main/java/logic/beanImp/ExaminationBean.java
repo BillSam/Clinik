@@ -14,7 +14,7 @@ import javax.inject.Inject;
  */
 public class ExaminationBean implements ExaminationIn {
     @Inject
-    @Clinic(Clinic.clinicChoice.ExaminationDao)
+    @Clinic(value = Clinic.clinicChoice.ExaminationDao)
     Crud examinationDao;
 
     @Override

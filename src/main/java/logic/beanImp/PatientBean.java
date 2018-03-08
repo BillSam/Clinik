@@ -16,7 +16,7 @@ import java.util.ArrayList;
 @RequestScoped
 public class PatientBean implements PatientBeanIn{
     @Inject
-    @Clinic(Clinic.clinicChoice.PatientDao)
+    @Clinic(value = Clinic.clinicChoice.PatientDao)
     Crud patientDao;
 
     public boolean registerPatient(Patient patient){

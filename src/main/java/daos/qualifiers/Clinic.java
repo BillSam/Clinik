@@ -15,6 +15,7 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 @Target({ElementType.FIELD,ElementType.TYPE,ElementType.METHOD,ElementType.PARAMETER})
 public @interface Clinic {
     clinicChoice value();
+}
 
     enum clinicChoice{
         BookingDao,
@@ -27,4 +28,4 @@ public @interface Clinic {
 
     }
 
-}
+

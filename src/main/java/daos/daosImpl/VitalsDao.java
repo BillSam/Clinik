@@ -11,12 +11,12 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import static daos.qualifiers.Clinic.clinicChoice.Vitals;
+import static daos.qualifiers.Clinic.clinicChoice.PatientVitals;
 
 /**
  * Created by error on 2/27/18.
  */
-@Clinic(Vitals)
+@Clinic(PatientVitals)
 public class VitalsDao implements Crud {
     private DbUtil myDb=null;
 

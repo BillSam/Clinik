@@ -4,20 +4,15 @@ import DataMapper.DbUtil;
 import daos.daosInterface.Crud;
 import daos.qualifiers.Clinic;
 import pojos.actions.Booking;
-import pojos.actions.Examination;
 import pojos.users.Patient;
-
-import javax.inject.Inject;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import static daos.qualifiers.Clinic.clinicChoice.BookingDao;
-
 /**
  * Created by error on 2/21/18.
  */
-@Clinic(BookingDao)
+@Clinic(value = Clinic.clinicChoice.BookingDao)
 public class BookingDao implements Crud{
 
     private DbUtil myDb =null;
