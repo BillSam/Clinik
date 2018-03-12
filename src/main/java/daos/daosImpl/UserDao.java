@@ -5,6 +5,7 @@ import daos.daosInterface.Crud;
 import daos.qualifiers.Clinic;
 import pojos.users.User;
 
+import javax.enterprise.context.RequestScoped;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -14,6 +15,7 @@ import static daos.qualifiers.Clinic.clinicChoice.UserDao;
 /**
  * Created by error on 2/11/18.
  */
+@RequestScoped
 @Clinic(UserDao)
 public class UserDao implements Crud{
     private DbUtil myDb = null;

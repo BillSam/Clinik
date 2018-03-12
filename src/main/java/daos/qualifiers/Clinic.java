@@ -1,10 +1,10 @@
 package daos.qualifiers;
 
 import javax.inject.Qualifier;
-import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.Target;
 
+import static java.lang.annotation.ElementType.*;
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
 /**
@@ -12,12 +12,11 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
  */
 @Qualifier
 @Retention(RUNTIME)
-@Target({ElementType.FIELD,ElementType.TYPE,ElementType.METHOD,ElementType.PARAMETER})
+@Target({FIELD,TYPE,METHOD,PARAMETER})
 public @interface Clinic {
     clinicChoice value();
-}
 
-    enum clinicChoice{
+    enum clinicChoice {
         BookingDao,
         DispenseDao,
         ExaminationDao,
@@ -25,7 +24,9 @@ public @interface Clinic {
         PatientDao,
         UserDao,
         PatientVitals
-
     }
+}
+
+
 
 

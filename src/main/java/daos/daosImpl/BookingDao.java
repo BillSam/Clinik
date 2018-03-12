@@ -2,9 +2,12 @@ package daos.daosImpl;
 
 import DataMapper.DbUtil;
 import daos.daosInterface.Crud;
+import static daos.qualifiers.Clinic.clinicChoice.BookingDao;
 import daos.qualifiers.Clinic;
 import pojos.actions.Booking;
 import pojos.users.Patient;
+
+import javax.enterprise.context.RequestScoped;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -12,7 +15,8 @@ import java.util.ArrayList;
 /**
  * Created by error on 2/21/18.
  */
-@Clinic(value = Clinic.clinicChoice.BookingDao)
+@RequestScoped
+@Clinic(value = BookingDao)
 public class BookingDao implements Crud{
 
     private DbUtil myDb =null;

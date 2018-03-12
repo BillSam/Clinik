@@ -3,6 +3,7 @@ package daos.daosImpl;
 import daos.daosInterface.Crud;
 import daos.qualifiers.Clinic;
 
+import javax.enterprise.context.RequestScoped;
 import java.util.ArrayList;
 
 import static daos.qualifiers.Clinic.clinicChoice.DispenseDao;
@@ -10,6 +11,7 @@ import static daos.qualifiers.Clinic.clinicChoice.DispenseDao;
 /**
  * Created by error on 2/21/18.
  */
+@RequestScoped
 @Clinic(DispenseDao)
 public class DispenseDao implements Crud {
 

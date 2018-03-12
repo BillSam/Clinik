@@ -7,14 +7,16 @@ import pojos.actions.Booking;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 
+import static daos.qualifiers.Clinic.clinicChoice.BookingDao;
+
 /**
  * Created by error on 2/21/18.
  */
 @RequestScoped
 public class BookingBean implements BookingInt {
     @Inject
-    @Clinic(value= Clinic.clinicChoice.BookingDao)
-    Crud bookingDao;
+    @Clinic(value = BookingDao)
+    private Crud bookingDao;
 
     @Override
     public boolean createBooking(Booking booking) {

@@ -1,6 +1,5 @@
 package logic.beanImp;
 
-import daos.daosImpl.PatientDao;
 import daos.daosInterface.Crud;
 import daos.qualifiers.Clinic;
 import logic.beanInterface.PatientBeanIn;
