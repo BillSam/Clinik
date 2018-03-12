@@ -3,6 +3,7 @@ package web;
 import logic.beanImp.PatientVitalsBean;
 import pojos.actions.PatientVitals;
 
+import javax.ejb.EJB;
 import javax.inject.Inject;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -20,7 +21,7 @@ import java.io.PrintWriter;
 //create a servlet that receives patient vitals from jsp and call the
 //dao methods to save the patient vitals..
 public class AddVitals extends HttpServlet {
-    @Inject
+    @EJB
     private PatientVitalsBean logic;
 
 

@@ -4,6 +4,7 @@ import logic.beanImp.PatientVitalsBean;
 import pojos.actions.PatientVitals;
 import pojos.users.Patient;
 
+import javax.ejb.EJB;
 import javax.inject.Inject;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -18,7 +19,7 @@ import java.io.PrintWriter;
  */
 @WebServlet(urlPatterns = "/viewVitals")
 public class ViewVitals extends HttpServlet {
-    @Inject
+    @EJB
     private PatientVitalsBean logic;
 
 

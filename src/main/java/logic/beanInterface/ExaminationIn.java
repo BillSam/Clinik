@@ -3,9 +3,12 @@ package logic.beanInterface;
 import pojos.actions.Examination;
 import pojos.users.Patient;
 
+import javax.ejb.Remote;
+
 /**
  * Created by error on 2/26/18.
  */
+@Remote
 public interface ExaminationIn {
 
     boolean createExamination(Examination examination);

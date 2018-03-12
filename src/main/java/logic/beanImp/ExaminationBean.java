@@ -7,11 +7,13 @@ import logic.beanInterface.ExaminationIn;
 import pojos.actions.Examination;
 import pojos.users.Patient;
 
+import javax.ejb.Stateless;
 import javax.inject.Inject;
 
 /**
  * Created by error on 2/26/18.
  */
+@Stateless
 public class ExaminationBean implements ExaminationIn {
     @Inject
     @Clinic(value = Clinic.clinicChoice.ExaminationDao)

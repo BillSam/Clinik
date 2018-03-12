@@ -8,6 +8,7 @@ import logic.beanInterface.UserBeanIo;
 import pojos.users.Doctor;
 import pojos.users.User;
 
+import javax.ejb.Stateless;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import java.util.ArrayList;
@@ -16,7 +17,7 @@ import java.util.ArrayList;
 /**
  * Created by error on 2/9/18.
  */
-@RequestScoped
+@Stateless
 public class UserBeanLogic implements UserBeanIo {
     @Inject
     @Clinic(value = Clinic.clinicChoice.UserDao)

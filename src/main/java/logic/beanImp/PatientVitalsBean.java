@@ -7,13 +7,14 @@ import logic.beanInterface.PatientVitalsBeanIn;
 import pojos.actions.PatientVitals;
 import pojos.users.Patient;
 
+import javax.ejb.Stateless;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 
 /**
  * Created by error on 2/21/18.
  */
-@RequestScoped
+@Stateless
 public class PatientVitalsBean implements PatientVitalsBeanIn{
     @Inject
     @Clinic(value = Clinic.clinicChoice.PatientVitals)

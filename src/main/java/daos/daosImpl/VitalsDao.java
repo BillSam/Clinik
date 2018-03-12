@@ -14,6 +14,7 @@ import java.util.ArrayList;
 /**
  * Created by error on 2/27/18.
  */
+
 @RequestScoped
 @Clinic(value = Clinic.clinicChoice.PatientVitals)
 public class VitalsDao implements Crud {

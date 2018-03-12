@@ -3,6 +3,7 @@ package web;
 import logic.beanImp.PatientBean;
 import pojos.users.Patient;
 
+import javax.ejb.EJB;
 import javax.inject.Inject;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -20,7 +21,7 @@ import java.io.PrintWriter;
 //create a servlet that receive patient details and call the patientBean
 public class RegPatient extends HttpServlet {
     //inject the patientBean object
-    @Inject
+    @EJB
     private PatientBean logic;
 
     @Override

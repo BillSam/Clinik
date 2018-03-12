@@ -1,9 +1,11 @@
 package web;
-import daos.daosImpl.BookingDao;
+
 import logic.beanImp.BookingBean;
 import logic.beanImp.UserBeanLogic;
 import pojos.actions.Booking;
 import pojos.users.User;
+
+import javax.ejb.EJB;
 import javax.inject.Inject;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -22,7 +24,7 @@ public class BookPatient extends HttpServlet {
 
     @Inject
     private UserBeanLogic logic;
-    @Inject
+    @EJB
     private BookingBean book;
 
 

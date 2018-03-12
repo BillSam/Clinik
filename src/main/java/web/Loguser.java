@@ -3,6 +3,7 @@ package web;
 import logic.beanImp.UserBeanLogic;
 import pojos.users.User;
 
+import javax.ejb.EJB;
 import javax.inject.Inject;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -21,7 +22,7 @@ import java.io.PrintWriter;
 //Loguser servlet to log in users and redirect them to their specific welcome pages:
 public class Loguser extends HttpServlet {
     //inject the managed userBean logic
-    @Inject
+    @EJB
     private UserBeanLogic logic;
 
 

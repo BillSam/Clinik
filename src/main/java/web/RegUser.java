@@ -3,6 +3,7 @@ package web;
 import logic.beanInterface.UserBeanIo;
 import pojos.users.User;
 
+import javax.ejb.EJB;
 import javax.inject.Inject;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -21,7 +22,7 @@ import java.io.PrintWriter;
 //a servlet that register a new user
 public class RegUser extends HttpServlet {
     //inject the required bean logic
-    @Inject
+    @EJB
     private UserBeanIo logic;
 
 

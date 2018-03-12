@@ -5,6 +5,7 @@ import daos.qualifiers.Clinic;
 import logic.beanInterface.PatientBeanIn;
 import pojos.users.Patient;
 
+import javax.ejb.Stateless;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import java.util.ArrayList;
@@ -12,7 +13,7 @@ import java.util.ArrayList;
 /**
  * Created by error on 2/21/18.
  */
-@RequestScoped
+@Stateless
 public class PatientBean implements PatientBeanIn{
     @Inject
     @Clinic(value = Clinic.clinicChoice.PatientDao)

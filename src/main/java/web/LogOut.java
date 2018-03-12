@@ -4,6 +4,7 @@ import logic.beanImp.UserBeanLogic;
 import logic.beanInterface.UserBeanIo;
 import pojos.users.User;
 
+import javax.ejb.EJB;
 import javax.inject.Inject;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -19,7 +20,7 @@ import java.io.PrintWriter;
  */
 @WebServlet(urlPatterns = "/logOut")
 public class LogOut extends HttpServlet {
-    @Inject
+    @EJB
     private UserBeanLogic logic;
 
 

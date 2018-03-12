@@ -4,6 +4,7 @@ import daos.qualifiers.Clinic;
 import logic.beanInterface.BookingInt;
 import pojos.actions.Booking;
 
+import javax.ejb.Stateless;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 
@@ -12,7 +13,7 @@ import static daos.qualifiers.Clinic.clinicChoice.BookingDao;
 /**
  * Created by error on 2/21/18.
  */
-@RequestScoped
+@Stateless
 public class BookingBean implements BookingInt {
     @Inject
     @Clinic(value = BookingDao)
