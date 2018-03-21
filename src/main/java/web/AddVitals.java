@@ -1,6 +1,7 @@
 package web;
 
 import logic.beanImp.PatientVitalsBean;
+import logic.beanInterface.PatientVitalsBeanIn;
 import pojos.actions.PatientVitals;
 
 import javax.ejb.EJB;
@@ -22,7 +23,7 @@ import java.io.PrintWriter;
 //dao methods to save the patient vitals..
 public class AddVitals extends HttpServlet {
     @EJB
-    private PatientVitalsBean logic;
+    private PatientVitalsBeanIn logic;
 
 
     @Override

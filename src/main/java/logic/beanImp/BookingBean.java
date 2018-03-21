@@ -8,6 +8,8 @@ import javax.ejb.Stateless;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 
+import java.util.List;
+
 import static daos.qualifiers.Clinic.clinicChoice.BookingDao;
 
 /**
@@ -27,8 +29,8 @@ public class BookingBean implements BookingInt {
     }
 
     @Override
-    public boolean getBooking(Booking booking) {
-        return false;
+    public Booking getBooking(String id) {
+        return null;
     }
 
     @Override
@@ -39,5 +41,10 @@ public class BookingBean implements BookingInt {
     @Override
     public boolean deleteBooking(Booking booking) {
         return false;
+    }
+
+    @Override
+    public List getAllBookings() {
+        return null;
     }
 }

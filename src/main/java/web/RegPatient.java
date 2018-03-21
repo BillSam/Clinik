@@ -21,7 +21,7 @@ import java.io.PrintWriter;
 //create a servlet that receive patient details and call the patientBean
 public class RegPatient extends HttpServlet {
     //inject the patientBean object
-    @EJB
+    @Inject
     private PatientBean logic;
 
     @Override

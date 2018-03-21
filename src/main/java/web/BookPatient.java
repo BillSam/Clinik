@@ -2,6 +2,7 @@ package web;
 
 import logic.beanImp.BookingBean;
 import logic.beanImp.UserBeanLogic;
+import logic.beanInterface.BookingInt;
 import pojos.actions.Booking;
 import pojos.users.User;
 
@@ -25,7 +26,7 @@ public class BookPatient extends HttpServlet {
     @Inject
     private UserBeanLogic logic;
     @EJB
-    private BookingBean book;
+    private BookingInt book;
 
 
     @Override

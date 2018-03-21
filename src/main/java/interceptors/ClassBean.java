@@ -1,7 +1,5 @@
 package interceptors;
 
-import javax.interceptor.InterceptorBinding;
-
 /**
  * Created by error on 3/7/18.
  */
